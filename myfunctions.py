@@ -5,19 +5,7 @@ def euler(x,y,f,h,xend):
         y+=h*f(y,x)
         x+=h
     file.close()
-'''#function for  RK4 method first order
-def rungekutta41(x,y,f,h,xend):
-    file = open("RK4"+ str(h)+".txt", "w+")
-    while (x<=xend):
-        file.writelines([str(x)+"   ",str(y)+"\n"])
-        k1=h*f(y,x)
-        k2=h*f((y+(k1/2)),(x+(h/2)))
-        k3=h*f((y+(k2/2)),(x+(h/2)))
-        k4=h*f((y+k3),(x+h))
-        y+=(k1+2*k2+2*k3+k4)/6
-        x+=h
-    file.close()'''
-#function for  RK4 method second order
+
 def rungekutta4(x,y,z,dydx,dzdx,h,xstart,xend):
     file = open("RK4"+ str(h)+".txt", "w+")
     a=x
@@ -55,5 +43,4 @@ def rungekutta4(x,y,z,dydx,dzdx,h,xstart,xend):
         a+=g
         file.writelines([str(a)+"   ",str(b)+"\n"])
     file.close()
-#def boundary(a,b,ya,yb,guess,dydx,dzdx,h):
 
