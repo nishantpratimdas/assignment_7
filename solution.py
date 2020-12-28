@@ -20,11 +20,24 @@ de.euler(3,1,f1b,0.012,5)
 
 #Question 2
 
-def f(z,y,x):
+def f2(z,y,x):
     return 1-x-z
-def g(z,x):
+def g2(z,x):
     return z
-de.rk4(0,2,1,g,f,0.2,-5,5)
-de.rk4(0,2,1,g,f,0.7,-5,5)
-de.rk4(0,2,1,g,f,0.01,-5,5)
-de.rk4(0,2,1,g,f,0.05,-5,5)
+    
+de.rk4(0,2,1,g2,f2,0.2,-5,5)
+de.rk4(0,2,1,g2,f2,0.7,-5,5)
+de.rk4(0,2,1,g2,f2,0.01,-5,5)
+de.rk4(0,2,1,g2,f2,0.05,-5,5)
+
+#Question 3
+
+def f3(z,y,x):
+    return z+1
+def g3(z,x):
+    return z
+
+de.boundary(0,1,1,2*(2.71828-1),5.5,g3,f3,0.2,0.0001)
+de.boundary(0,1,1,2*(2.71828-1),5.5,g3,f3,0.02,0.0001)
+de.boundary(0,1,1,2*(2.71828-1),5.5,g3,f3,0.05,0.0001)
+de.boundary(0,1,1,2*(2.71828-1),5.5,g3,f3,0.005,0.0001)
